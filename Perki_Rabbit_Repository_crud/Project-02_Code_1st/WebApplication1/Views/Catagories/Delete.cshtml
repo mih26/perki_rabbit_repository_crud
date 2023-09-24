@@ -1,0 +1,39 @@
+﻿@model Catagory
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div>&nbsp</div>
+        <h4>Delete Catagory</h4>
+        <form method="post" asp-action="Delete" asp-controller="Catagories">
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group row mb-1">
+                <div>&nbsp</div>
+                <label asp-for="CatagoryName" class="col-form-label col-2"></label>
+                <div class="col-4">
+                    @Model.CatagoryName
+                </div>
+            </div>
+            <div class="form-group row mb-1">
+                <label asp-for="Description" class="col-form-label col-2"></label>
+                <div class="col-4">
+                    @Model.Description
+                </div>
+            </div>
+            <div class="form-group row mb-1">
+
+                <div class="col-4 offset-2">
+                    <button type="submit" class="btn btn-primary">Delete</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+@section scripts{
+
+    <script src="e:\1270880\asp core\class 02 practice\webapplication\webapplication1\wwwroot\libs\jquery\jquery.js"></script>
+    <script src="e:\1270880\asp core\class 02 practice\webapplication\webapplication1\wwwroot\libs\validate\jquery.validate.unobtrusive.js"></script>
+    <script src="e:\1270880\asp core\class 02 practice\webapplication\webapplication1\wwwroot\libs\validate\jquery.validate.js"></script>
+}

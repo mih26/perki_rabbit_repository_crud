@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WebApplication1</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/WebApplication1.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-info">
+        @Html.ActionLink("Perkey Rabbit Corporation", "Index", "Home", new { area = "" }, new { @class = "navbar-brand text-white" })
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link text-white" })</li>
+                <li class="nav-item">@Html.ActionLink("Customers", "Index", "Customers", new { area = "" }, new { @class = "nav-link text-white" })</li>
+                <li class="nav-item">@Html.ActionLink("Products", "Index", "Products", new { area = "" }, new { @class = "nav-link text-white" })</li>
+
+            </ul>
+        </div>
+       </nav>
+        <div class="container body-content">
+            <main class="container-fluid" style="min-height:calc(100vh - 120px)">
+                @RenderBody()
+            </main>
+    </div>
+        <footer class="container-fluid text-center bg-info text-white">
+            <p>@DateTime.Today.ToString("MMM dd, yyyy") &copy; All Right Reserved By Perkey Rabbit Corporation (Md.Iquball Hossain)</p>
+        </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

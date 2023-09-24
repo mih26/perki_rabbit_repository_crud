@@ -1,0 +1,52 @@
+﻿@model ProductInputModel
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div>&nbsp</div>
+        <h4>Edit product</h4>
+        <form method="post" asp-action="Edit" asp-controller="Products">
+            <input type="hidden" asp-for="Id" />
+            <div>&nbsp</div>
+            <div class="form-group row mb-1">
+                <label asp-for="ProductName" class="col-form-label col-2"></label>
+                <div class="col-4">
+                    <input type="text" asp-for="ProductName" class="form-control" />
+                    <span asp-validation-for="ProductName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row mb-1">
+                <label asp-for="UnitPrice" class="col-form-label col-2"></label>
+                <div class="col-4">
+                    <input type="text" asp-for="UnitPrice" class="form-control" />
+                    <span asp-validation-for="UnitPrice" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row mb-1">
+                <label asp-for="CatagoryId" class="col-form-label col-2"></label>
+                <div class="col-4">
+                    <select class="form-select" asp-for="CatagoryId" asp-items="@(new SelectList(ViewBag.Catagories, "Id", "CatagoryName"))">
+                        <option value="" selected>Select</option>
+                    </select>
+                    <span asp-validation-for="CatagoryId" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row mb-1">
+
+                <div class="col-4 offset-2">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section scripts{
+
+    <script src="d:\isdb-bisew\asp.net core\class 02 practice update\webapplication\webapplication1\wwwroot\libs\jquery\jquery.js"></script>
+
+    <script src="d:\isdb-bisew\asp.net core\class 02 practice update\webapplication\webapplication1\wwwroot\libs\validate\jquery.validate.unobtrusive.js"></script>
+    <script src="d:\isdb-bisew\asp.net core\class 02 practice update\webapplication\webapplication1\wwwroot\libs\validate\jquery.validate.js"></script>
+}

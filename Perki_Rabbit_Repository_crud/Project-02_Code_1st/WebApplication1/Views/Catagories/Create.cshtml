@@ -1,0 +1,40 @@
+﻿@model Catagory
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div>&nbsp</div>
+        <h4>Create New Catagory</h4>
+        <form method="post" asp-action="Create" asp-controller="Catagories">
+            <div>&nbsp</div>
+            <div class="form-group row mb-1">
+                <label asp-for="CatagoryName" class="col-form-label col-2"></label>
+                <div class="col-4">
+                    <input type="text" asp-for="CatagoryName" class="form-control" />
+                    <span asp-validation-for="CatagoryName" class="text-danger"></span>
+                </div>
+            </div>
+             <div class="form-group row mb-1">
+                <label asp-for="Description" class="col-form-label col-2"></label>
+                <div class="col-4">
+                    <input type="text" asp-for="Description" class="form-control" />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row mb-1">
+                
+                <div class="col-4 offset-2">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+@section scripts{
+   
+<script src="e:\1270880\asp core\class 02 practice\webapplication\webapplication1\wwwroot\libs\jquery\jquery.js"></script>
+    <script src="e:\1270880\asp core\class 02 practice\webapplication\webapplication1\wwwroot\libs\validate\jquery.validate.unobtrusive.js"></script>
+    <script src="e:\1270880\asp core\class 02 practice\webapplication\webapplication1\wwwroot\libs\validate\jquery.validate.js"></script>
+}
